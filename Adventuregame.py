@@ -78,10 +78,13 @@ while True:
             continue
 
         if portal.can_pass(inventory):
+            if portal.pass_message is not None:
+                print(portal.pass_message)
             location = portal.dest
         
         else:
-            print("Hmm, looks like you need something to open this door.")
+            if portal.blocked_message is not None:
+                print(portal.blocked_message)
         
         continue
 

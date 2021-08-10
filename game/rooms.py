@@ -49,7 +49,12 @@ rooms = {
         "The house is small but cozy-looking. The walls are overgrown with vines, giving a feeling that it has been abandoned for some time, but the two lanterns hanging in the doorway are still alight. To the south is an open grass field. To the north is the inside of the house.", 
         "",
         {
-            "north": LockedPortal("inside_house", "house key"), 
+            "north": LockedPortal(
+                "inside_house", 
+                "house key",
+                blocked_message = "This door is locked. Maybe someone left a house key somewhere?",
+                pass_message = "You twist the house key in the lock, and the door creaks open. The sound echoes through the house.",
+            ), 
             "south": Portal("start")
         },
         objects = ["rusty key"] 
@@ -61,7 +66,12 @@ rooms = {
         {
             "north": Portal("backyard"), 
             "south": Portal("outside_house"), 
-            "west": Portal("basement")
+            "west": LockedPortal(
+                "basement",
+                "wooden key",
+                blocked_message = "This door is locked. You can see splinters in the keyhole. Surely there's a key somewhere, right?",
+                pass_message = "You see that the wooden key fits here! You can hear the key splintering a little as you turn it in the lock, but the door opens with a satisfying click!",
+            )
         },
         objects = ["ripped book"] 
     ), 
@@ -70,7 +80,7 @@ rooms = {
         "You walk down the creaky set of stairs to the basement. There are a few chairs on a stone floor. To the north, there is a hole in the wall leading to a damp, dimly lit cave. You can enter the cave to the north or go back to the main floor of the house to the east.", 
         "",
         {
-            "east": LockedPortal("inside_house", "wooden key"), 
+            "east": Portal("inside_house"), 
             "north": Portal("cave_entrance"), 
         },
         objects = ["chair leg", "nails", "broken board", "rope"] 
@@ -88,12 +98,22 @@ rooms = {
     ), 
     "cave_crossroads": Room(
         "cave crossroads", 
-        "Your path branches again, showing a steel door to the west and a path to to the surface to the east. In front of you is a rough rock wall. To the south is a pathway that branches towards a hole in a wall in one direction and towards the surface in another.", 
+        "Your path branches again, showing a steel door to the west and a path to to the surface to the east blocked by a stone outcrop. In front of you is a rough rock wall. To the south is a pathway that branches towards a hole in a wall in one direction and towards the surface in another.", 
         "", 
         {
             "south": Portal("cave_entrance"), 
-            "west": LockedPortal("ritual_chamber", "4 character passkey"),
-            "east": LockedPortal("forest_wall_north_of_house", "rope")
+            "west": LockedPortal(
+                "ritual_chamber",
+                "4 character passkey", 
+                blocked_message = "There is a keypad on the door. You try to guess the code a few times, but nothing works. Maybe someone left the code lying around somewhere?",
+                pass_message = "The keypad beeps, and the door swings open to reveal a small chamber.",
+            ),
+            "east": LockedPortal(
+                "forest_wall_north_of_house", 
+                "rope", 
+                blocked_message = "There is a rock outcrop blocking your path. Theres a hook at the top though. If only you had something to attach there.",
+                pass_message = "You attach your rope to the hook and climb up. At the top, you continue east to the surface.",
+            )
         },
         objects = ["mud clump", "broken house key"]
     ), 
@@ -179,10 +199,15 @@ rooms = {
     ), 
     "outside_barn": Room(
         "outside barn", 
-        "You stand outside a worn down barn, its gates lie open and splintered in places. A trail of moldy smelling air leads to the inside to the east. To the west is a long dirt road.", 
+        "You stand outside a worn down barn, its gates closed and splintered in places. A trail of moldy smelling air leads to the inside to the east. To the west is a long dirt road.", 
         "",
         {
-            "east": LockedPortal("inside_barn", "crowbar"),
+            "east": LockedPortal(
+                "inside_barn", 
+                "crowbar",
+                blocked_message = "This barn door is closed. Maybe you could pry it open if you found the right tool?",
+                pass_message = "You wedge the crowbar into a crack and pull. The huge doors splinter more as you pry one open to reveal a barn that has clearly not seen use in years.",
+            ),
             "west": Portal("dirt_road_east")
         }, 
         objects = ["used road flare", "broken board"] 
