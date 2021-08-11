@@ -94,7 +94,7 @@ while True:
             location="start"
             continue
         else:
-            print("Thank you for playing!")
+            print_coloured_string("Thank you for playing!")
             exit()
 
     if current_room != last_room:
