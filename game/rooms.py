@@ -84,13 +84,16 @@ rooms = {
         {
             "south": Portal("basement"),
             "west": Portal("cave_west_to_hill"), 
-            "north": Portal("cave_crossroads")
+            "north": Portal(
+                "cave_crossroads", 
+                pass_message = "The path branches again."
+                )
         },
         objects = ["rough stone", "road flare"] 
     ), 
     "cave_crossroads": Room(
         "cave crossroads", 
-        "Your path branches again, showing a steel door to the west and a path to to the surface to the east blocked by a stone outcrop. In front of you is a rough rock wall. To the south is a pathway that branches towards a hole in a wall in one direction and towards the surface in another.", 
+        "You see a steel door to the west and a path to to the surface to the east blocked by a stone outcrop. In front of you is a rough rock wall. To the south is a pathway that branches towards a hole in a wall in one direction and towards the surface in another.", 
         {
             "south": Portal("cave_entrance"), 
             "west": WinPortal(
@@ -125,7 +128,10 @@ rooms = {
         "You stare into a solid wall of foliage. There is no way of entering the forest from here. To the south you see the backyard of the house, and to the west you see a cave opening.", 
         {
             "south": Portal("backyard"),
-            "west": Portal("cave_crossroads")
+            "west": Portal(
+                "cave_crossroads",
+                pass_message = "You hop down what looks like a short outcrop. Upon landing and hurting your ankles, you see that it is higher than you thought."
+            )
         },
         objects = ["wooden key"]
     ), 
