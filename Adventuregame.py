@@ -20,7 +20,7 @@ def get_input(prompt):
     return input().lower()
 
 def translate_command(command):
-    tokens = command.split(' ')
+    tokens = command.split()
     if len(tokens) == 1:
         if 'north'.startswith(tokens[0]):
             return 'go', 'north'
