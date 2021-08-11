@@ -67,7 +67,7 @@ rooms = {
                 pass_message = "You see that the wooden key fits here! You can hear the key splintering a little as you turn it in the lock, but the door opens with a satisfying click!",
             )
         },
-        objects = ["ripped book"] 
+        objects = ["ripped book", "crowbar"] 
     ), 
     "basement": Room(
         "basement", 
@@ -215,7 +215,8 @@ rooms = {
         "You step through the stiff doorframe into the small stone room, noticing that the bloody markings all over the walls are shaped like spirals around a hastily drawn door. A tentacled beast emerges from a pool on the side opposite you. You strike the road flare and use it to burn the mold you found in the barn, severing the creature's connection to this place. Purple lights spark to life in mid-air, swirling around the monster, sucking it into a now growing orb of light. Intrigued, you move closer, getting sucked in yourself. You are pulled in all directions at once, seeing colours you never even imagined could exist as you fall through what looks like a hallway tipped on it's side. when you reach the bottom, you see it. The door that was drawn in blood. It opens and faster than you can blink, you are pulled through. When you open your eyes, only one thought passes through your head. 'This is not earth'. Your vision goes dark.",
         {
             "y": Portal("start")
-        }
+        },
+        is_win_game = True
     ),
     "forest_win_room": Room(
         "forest win clearing",
