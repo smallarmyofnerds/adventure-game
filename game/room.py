@@ -1,10 +1,10 @@
 class Room:
-    def __init__(self, name, desc, hidden_desc, exits, *args, **kwargs):
+    def __init__(self, name, desc, exits, *args, **kwargs):
         self.name = name
         self.desc = desc
-        self.hidden_desc = hidden_desc
         self.exits = exits
         self.is_game_over = kwargs.get('is_game_over', False)
+        self.is_win_game = kwargs.get("is_win_game", False)
         self.objects = kwargs.get('objects', [])
     
     def get_exit(self, direction):
