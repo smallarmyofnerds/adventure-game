@@ -80,13 +80,12 @@ rooms = {
     ), 
     "cave_entrance": Room(
         "cave entrance", 
-        "You stand in the entrance to a dripping cave,the stone pathway branching in front of you to go deeper underground to the north and towards the surface to the west. To the south is a hole in a wooden wall leading to a basement.", 
+        "You stand in the entrance to a dripping cave,the stone pathway going deeper underground to the north. To the south is a hole in a wooden wall leading to a basement.", 
         {
             "south": Portal("basement"),
-            "west": Portal("cave_west_to_hill"), 
             "north": Portal(
                 "cave_crossroads", 
-                pass_message = "The path branches again."
+                pass_message = "The path branches ahead of you."
                 )
         },
         objects = ["rough stone", "road flare"] 
