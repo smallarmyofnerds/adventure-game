@@ -73,7 +73,10 @@ rooms = {
         "basement", 
         "You walk down the creaky set of stairs to the basement. There are a few chairs on a stone floor. To the north, there is a hole in the wall leading to a damp, dimly lit cave. You can enter the cave to the north or go back to the main floor of the house to the east.", 
         {
-            "east": Portal("inside_house"), 
+            "east": Portal(
+                "inside_house",
+                pass_message = "You unlatch the door and walk through, but you slip and it slams shut behind you. You will need the key to unlock it from this side."
+                ), 
             "north": Portal("cave_entrance"), 
         },
         objects = ["chair leg", "nails", "broken board", "rope"] 
